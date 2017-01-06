@@ -1,10 +1,14 @@
 var webpack = require('webpack');
 
 module.exports = {
-    entry: "./src/app.js",
+    entry: {
+        app: ["./src/app.js"]
+    },
+    devServer: { inline: true },
     output: {
         path: __dirname+'/public/js',
-        filename: "app.bundle.js"
+        publicPath: "/js/",
+        filename: "bundle.js"
     },
     // plugins: [
     //     new webpack.optimize.UglifyJsPlugin({
